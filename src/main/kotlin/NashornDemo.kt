@@ -5,22 +5,23 @@ import java.util.*
 import javax.script.Invocable
 import javax.script.ScriptEngineManager
 
-class NashornDemo {
+object NashornDemo {
 
-    companion object {
-        fun fun1(name: String): String {
-            System.out.format("Hi there from Java, %s", name)
-            return "greetings from java"
-        }
+    @JvmStatic
+    fun fun1(name: String): String {
+        System.out.format("Hi there from Java, %s", name)
+        return "greetings from java"
+    }
 
-        fun fun3(mirror: ScriptObjectMirror) {
-            println(mirror.className + ": " +
-                    Arrays.toString(mirror.getOwnKeys(true)))
-        }
+    @JvmStatic
+    fun fun3(mirror: ScriptObjectMirror) {
+        println(mirror.className + ": " +
+                Arrays.toString(mirror.getOwnKeys(true)))
+    }
 
-        fun fun4(person: ScriptObjectMirror) {
-            println("Full Name is: " + person.callMember("getFullName"))
-        }
+    @JvmStatic
+    fun fun4(person: ScriptObjectMirror) {
+        println("Full Name is: " + person.callMember("getFullName"))
     }
 }
 
