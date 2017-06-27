@@ -25,7 +25,7 @@ print('\n\n=====================================================================
 print('Calling Java static method demo');
 print('======================================================================================');
 
-var NashornDemo = Java.type('NashornDemo');
+var NashornDemo = Java.type('NashornDemo').Companion;
 
 var result = NashornDemo.fun1('John Doe');
 print('\n');
